@@ -1,0 +1,8 @@
+Executing stage: SOMPZPzchat @ 2026-06-06 20:37:52.361258
+Inserting handle into data store.  spec_data: ../../../../../job/data/hlwas_cosmos_260120_UM_2026_01_22_classic_specmatch.parquet, sompz_pzchat
+column_list None
+Inserting handle into data store.  cell_wide_wide_data: .//out/widedata_wide_assignment.hdf5, sompz_pzchat
+Inserting handle into data store.  cell_deep_spec_data: .//out/specdata_deep_assignment.hdf5, sompz_pzchat
+Inserting handle into data store.  pc_chat: .//./out/pc_chat.hdf5, sompz_pzchat
+Inserting handle into data store.  pz_chat: out/inprogress_pz_chat.hdf5, sompz_pzchat
+Stage complete: SOMPZPzchat @ 2026-06-06 20:38:04.132962 took 0.20 minutes

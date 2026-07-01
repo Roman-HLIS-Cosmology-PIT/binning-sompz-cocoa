@@ -1,0 +1,7 @@
+Executing stage: SOMPZTomobin @ 2026-06-06 21:10:57.688574
+Inserting handle into data store.  spec_data: ../../../../../job/data/hlwas_cosmos_260120_UM_2026_01_22_classic_specmatch.parquet, sompz_tomobin
+column_list None
+Inserting handle into data store.  cell_deep_spec_data: .//out/specdata_deep_assignment.hdf5, sompz_tomobin
+Inserting handle into data store.  cell_wide_spec_data: .//out/specdata_wide_assignment.hdf5, sompz_tomobin
+Inserting handle into data store.  tomo_bins_wide: out/inprogress_tomo_bins_wide.hdf5, sompz_tomobin
+Stage complete: SOMPZTomobin @ 2026-06-06 21:10:57.884357 took 0.00 minutes

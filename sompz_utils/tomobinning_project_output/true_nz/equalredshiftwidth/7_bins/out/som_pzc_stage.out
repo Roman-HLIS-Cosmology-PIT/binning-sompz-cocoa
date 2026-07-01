@@ -1,0 +1,6 @@
+Executing stage: SOMPZPzc @ 2026-06-08 20:14:18.135408
+Inserting handle into data store.  spec_data: ../../../../../job/data/hlwas_cosmos_260120_UM_2026_01_22.parquet, som_pzc_stage
+column_list None
+Inserting handle into data store.  cell_deep_spec_data: .//out/specdata_deep_assignment.hdf5, som_pzc_stage
+Inserting handle into data store.  pz_c: out/inprogress_pz_c.hdf5, som_pzc_stage
+Stage complete: SOMPZPzc @ 2026-06-08 20:14:37.847694 took 0.33 minutes
