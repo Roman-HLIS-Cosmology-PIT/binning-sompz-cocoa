@@ -1,0 +1,10 @@
+data_file = ../fiddvs/photoz_realizations_5bins_equalnum.modelvector
+cov_file = ../covsfull/photoz_realizations_5bins_equalnum.cov
+mask_file = ../masks/photoz_realizations_5bins_equalnum.mask
+nz_lens_file = ../nzs/photoz_realizations_5bins_equalnum.nz
+nz_source_file = ../nzs/photoz_realizations_5bins_equalnum.nz
+lens_ntomo = 5
+source_ntomo = 5
+theta_min_arcmin = 2.5
+theta_max_arcmin = 250.0
+n_theta = 15

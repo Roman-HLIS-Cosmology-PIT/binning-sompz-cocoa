@@ -1,0 +1,95 @@
+# DHFS - MUST run from ./cocoa/Cocoa
+output: ../../OPTIMAL_TOMO_BINS/chains/dv_generator_photoz_realizations_5bins_equalnum
+
+timing: True
+debug: True
+stop_at_error: True
+
+likelihood:
+  roman_real.roman_real_cosmic_shear:
+    path: ../../OPTIMAL_TOMO_BINS/data
+    data_file: photoz_realizations_5bins_equalnum.dataset
+    accuracyboost: 1.0
+    integration_accuracy: 0
+    kmax_boltzmann: 5.0
+    # 1 EE2, 2 Halofit
+    non_linear_emul: 2
+    IA_model: 0
+    IA_redshift_evolution: 3
+    print_datavector: true
+    print_datavector_file: ../../OPTIMAL_TOMO_BINS/fiddvs/photoz_realizations_5bins_equalnum.modelvector
+    ggl_exclude: []
+
+theory:
+  camb:
+    path: ./external_modules/code/CAMB
+    stop_at_error: True
+    use_renames: True
+    extra_args:
+      halofit_version: takahashi
+      AccuracyBoost: 1.1
+      lens_potential_accuracy: 1.0
+      num_massive_neutrinos: 1
+      nnu: 3.046
+      dark_energy_model: ppf
+      accurate_massive_neutrino_transfers: false
+      k_per_logint: 20
+
+params:
+  As_1e9: 2.1
+  ns: 0.96605
+  H0: 67.32
+  omegab: 0.04
+  omegam: 0.3
+  w0pwa: -1.0
+  w: -1.0
+  mnu: 0.06
+  tau: 0.0697186
+  # ---------------------------------------------------------------------------------------
+  # ------------------------------------- DERIVED PARAMETERS ------------------------------
+  # ---------------------------------------------------------------------------------------
+  # WARNING: DO NOT REMOVE omegabh2/omegach2/omegamh2/wa/As/ FROM DERIVED PARAMETERS
+  # SEE: github.com/CosmoLike/cocoa#warning-warning-warning-weak-lensing-yaml-files-in-cobaya-
+  # --------------------------------------------------------------------------------------- 
+  As:
+    value: 'lambda As_1e9: 1e-9 * As_1e9'
+    latex: A_\mathrm{s}
+  wa:
+    value: 'lambda w0pwa, w: w0pwa - w'
+    latex: w_{a,\mathrm{DE}}
+  omegabh2:
+    value: 'lambda omegab, H0: omegab*(H0/100)**2'
+    latex: \Omega_\mathrm{b} h^2
+  omegach2:
+    value: 'lambda omegam, omegab, mnu, H0: (omegam-omegab)*(H0/100)**2-(mnu*(3.046/3)**0.75)/94.0708'
+    latex: \Omega_\mathrm{c} h^2
+  omegamh2:
+    derived: 'lambda omegam, H0: omegam*(H0/100)**2'
+    latex: \Omega_\mathrm{m} h^2
+  sigma8:
+    latex: \sigma_8
+
+  roman_DZ_S1: 0.0
+  roman_DZ_S2: 0.0
+  roman_DZ_S3: 0.0
+  roman_DZ_S4: 0.0
+  roman_DZ_S5: 0.0
+  roman_DZ_S6: 0.0
+  roman_DZ_S7: 0.0
+  roman_DZ_S8: 0.0
+  roman_DZ_S9: 0.0
+  roman_M1: 0.0
+  roman_M2: 0.0
+  roman_M3: 0.0
+  roman_M4: 0.0
+  roman_M5: 0.0
+  roman_M6: 0.0
+  roman_M7: 0.0
+  roman_M8: 0.0
+  roman_M9: 0.0
+  roman_A1_1: 0.0
+  roman_A1_2: 0.0
+
+sampler:
+  evaluate:
+    N: 2
